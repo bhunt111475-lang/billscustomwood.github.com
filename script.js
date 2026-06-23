@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const craftStacks = Array.from(document.querySelectorAll("[data-craft-stack]"));
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   const hoverQuery = window.matchMedia("(hover: hover)");
+  const mobileStackQuery = window.matchMedia("(max-width: 768px)");
   const focusableSelector = [
     "a[href]",
     "button:not([disabled])",
@@ -298,8 +299,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initCraftStack(stack) {
     const slides = Array.from(stack.querySelectorAll(".craft-stack-slide"));
+    const craftStatement = stack.parentElement?.querySelector(".craft-statement");
+    const founderSlide = stack.querySelector(".founder-slide");
+    const mobileSlides = [
+      craftStatement,
+      ...Array.from(stack.querySelectorAll(".faq-slide"))
+    ].filter(Boolean);
     const intervalDuration = 5000;
     let activeIndex = Math.max(slides.findIndex((slide) => slide.classList.contains("is-active")), 0);
+    let mobileActiveIndex = 0;
     let timerId = null;
     let paused = false;
 
@@ -307,12 +315,41 @@ document.addEventListener("DOMContentLoaded", () => {
     stack.dataset.stackReady = "true";
 
     function showSlide(index) {
+      if (mobileStackQuery.matches) {
+        showMobileSlide(index);
+        return;
+      }
+
       activeIndex = (index + slides.length) % slides.length;
 
       slides.forEach((slide, slideIndex) => {
         const isActive = slideIndex === activeIndex;
         slide.classList.toggle("is-active", isActive);
         slide.setAttribute("aria-hidden", String(!isActive));
+      });
+    }
+
+    function showMobileSlide(index) {
+      if (!mobileSlides.length) return;
+
+      mobileActiveIndex = (index + mobileSlides.length) % mobileSlides.length;
+
+      mobileSlides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === mobileActiveIndex;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      if (founderSlide) {
+        founderSlide.classList.add("is-active");
+        founderSlide.setAttribute("aria-hidden", "false");
+      }
+
+      slides.forEach((slide) => {
+        if (!mobileSlides.includes(slide) && slide !== founderSlide) {
+          slide.classList.remove("is-active");
+          slide.setAttribute("aria-hidden", "true");
+        }
       });
     }
 
@@ -329,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (paused || reducedMotionQuery.matches) return;
 
       timerId = window.setTimeout(() => {
-        showSlide(activeIndex + 1);
+        showSlide(mobileStackQuery.matches ? mobileActiveIndex + 1 : activeIndex + 1);
         scheduleNextSlide();
       }, intervalDuration);
     }
@@ -369,6 +406,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     reducedMotionQuery.addEventListener("change", () => {
       showSlide(0);
+      scheduleNextSlide();
+    });
+
+    mobileStackQuery.addEventListener("change", () => {
+      showSlide(mobileStackQuery.matches ? mobileActiveIndex : activeIndex);
       scheduleNextSlide();
     });
   }
