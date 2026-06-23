@@ -678,6 +678,8 @@ body.modal-open {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0 0 10rem;
+  scroll-behavior: auto;
+  overscroll-behavior: contain;
   transform: rotate(-90deg) translate3d(0, -100vh, 0);
   transform-origin: right top;
   perspective: 1px;
@@ -701,11 +703,13 @@ body.modal-open {
   min-height: 40vh;
   transform: rotate(90deg) translateZ(.1px) scale(0.9) translateX(0) translateY(-3vh);
   transform-origin: 50% 50%;
-  transition: 1s;
+  transition: min-height 420ms cubic-bezier(.22, 1, .36, 1), transform 520ms cubic-bezier(.22, 1, .36, 1), opacity 320ms ease, filter 320ms ease;
+  will-change: transform;
 }
 
 .archive-gallery .img-wrapper:hover {
-  min-height: 65vh;
+  min-height: 40vh;
+  z-index: 3;
 }
 
 .archive-gallery .slower {
@@ -750,6 +754,14 @@ body.modal-open {
   padding: 1vh;
   background: rgba(24, 16, 10, 0.78);
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.56);
+  transition: transform 360ms cubic-bezier(.22, 1, .36, 1), box-shadow 360ms ease;
+  will-change: transform;
+}
+
+.archive-gallery .img-wrapper:hover a,
+.archive-gallery .img-wrapper:focus-within a {
+  transform: scale(1.035);
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.58);
 }
 
 .archive-gallery img {
@@ -793,6 +805,10 @@ body.modal-open {
   background: rgba(18, 13, 9, 0.78);
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.48);
   backdrop-filter: blur(3px);
+}
+
+.craft-statement {
+  display: contents;
 }
 
 .craft-closing h2 {
@@ -1114,9 +1130,9 @@ body.modal-open {
   }
 
   .scroll-transition {
-    grid-template-rows: 100svh;
-    height: 185vh;
-    min-height: 185svh;
+    display: block;
+    height: auto;
+    min-height: 0;
   }
 
   @supports (height: 100dvh) {
@@ -1126,9 +1142,8 @@ body.modal-open {
     }
 
     .scroll-transition {
-      grid-template-rows: 100dvh;
-      height: 185dvh;
-      min-height: 185dvh;
+      height: auto;
+      min-height: 0;
     }
   }
 
@@ -1151,14 +1166,18 @@ body.modal-open {
   }
 
   .scroll-transition > .featured-section {
-    height: 100svh;
-    min-height: 100svh;
+    position: relative;
+    height: auto;
+    min-height: 0;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
   }
 
   @supports (height: 100dvh) {
     .scroll-transition > .featured-section {
-      height: 100dvh;
-      min-height: 100dvh;
+      height: auto;
+      min-height: 0;
     }
   }
 
@@ -1169,25 +1188,32 @@ body.modal-open {
     left: auto;
     padding: 1.15rem 24px 0.25rem;
     pointer-events: auto;
-    transform: translateY(var(--next-content-y));
+    transform: none;
   }
 
   .archive-gallery {
+    display: flex;
+    justify-content: center;
     overflow: hidden;
-    padding: 0 0 1.1rem;
+    padding: 0 0 1.35rem;
   }
 
   .archive-gallery .horizontal-scroll-wrapper {
     flex-direction: row;
     align-items: center;
-    width: auto;
+    width: 100%;
     height: auto;
     min-height: 0;
-    gap: 0.45rem;
+    gap: clamp(0.75rem, 3vw, 1.25rem);
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0.85rem calc(50vw - min(38vw, 180px)) 0.85rem;
-    scroll-padding-inline: calc(50vw - min(38vw, 180px));
+    padding: 1.1rem 8vw 1.45rem;
+    scroll-behavior: smooth;
+    scroll-padding-inline: 8vw;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y pinch-zoom;
     -ms-overflow-style: none;
     scrollbar-width: none;
     transform: none;
@@ -1195,7 +1221,8 @@ body.modal-open {
   }
 
   .archive-gallery .horizontal-scroll-wrapper::-webkit-scrollbar {
-    display: none;
+    width: 0;
+    height: 0;
   }
 
   .archive-gallery .img-wrapper,
@@ -1208,13 +1235,15 @@ body.modal-open {
   .archive-gallery .fastest,
   .archive-gallery .vertical,
   .archive-gallery .last {
-    flex: 0 0 min(76vw, 360px);
+    flex: 0 0 min(84vw, 420px);
     min-height: auto;
-    transform: scale(0.84);
+    transform: scale(0.92);
     transform-origin: center center;
-    opacity: 0.52;
-    filter: blur(0.7px) saturate(0.72);
-    transition: transform 260ms ease, opacity 260ms ease, filter 260ms ease;
+    opacity: 0.72;
+    filter: saturate(0.82);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    transition: transform 360ms cubic-bezier(.22, 1, .36, 1), opacity 360ms ease, filter 360ms ease;
   }
 
   .archive-gallery .img-wrapper:hover {
@@ -1229,14 +1258,22 @@ body.modal-open {
   }
 
   .archive-gallery .img-wrapper a {
-    width: 100%;
-    padding: 0.65vh;
+    display: grid;
+    place-items: center;
+    width: min(100%, 420px);
+    margin-inline: auto;
+    padding: 0.6rem;
+    border-radius: 8px;
+    background: rgba(28, 20, 14, 0.88);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.36),
+      0 8px 12px rgba(0, 0, 0, 0.24);
   }
 
   .archive-gallery img {
     width: 100%;
     max-width: none;
-    max-height: 40vh;
+    max-height: 43vh;
+    border-radius: 6px;
     object-fit: contain;
   }
 
@@ -1250,7 +1287,31 @@ body.modal-open {
 
   .craft-closing {
     min-height: auto;
-    padding: 1.85rem 24px 3rem;
+    padding: 2.4rem 24px 3.25rem;
+    opacity: 1;
+    transform: none;
+  }
+
+  .craft-closing__inner {
+    display: grid;
+    gap: clamp(3rem, 16vh, 5.5rem);
+    width: min(100%, 560px);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .craft-statement {
+    display: grid;
+    justify-items: center;
+    padding: clamp(1.65rem, 7vw, 2.35rem) clamp(1rem, 5vw, 1.65rem);
+    border: 1px solid rgba(255, 248, 236, 0.16);
+    border-radius: 14px;
+    background: rgba(18, 13, 9, 0.8);
+    box-shadow: 0 22px 54px rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(3px);
   }
 
   @supports (min-height: 100dvh) {
@@ -1261,9 +1322,11 @@ body.modal-open {
 
   .craft-closing .ornamental-divider {
     margin-top: 0;
+    margin-inline: auto;
   }
 
   .craft-closing h2 {
+    margin-top: 0.85rem;
     font-size: clamp(2rem, 9vw, 3.2rem);
   }
 
@@ -1277,7 +1340,26 @@ body.modal-open {
     margin-top: 1.5rem;
   }
 
+  .craft-statement > .ornamental-divider,
+  .craft-statement > h2,
+  .craft-statement > p,
+  .craft-statement > .quote-button {
+    position: relative;
+    z-index: 1;
+  }
+
+  .craft-statement > h2,
+  .craft-statement > p,
+  .craft-statement > .quote-button {
+    justify-self: center;
+  }
+
+  .craft-statement > .ornamental-divider {
+    width: min(160px, 52vw);
+  }
+
   .craft-stack {
+    margin-top: 0;
     min-height: 540px;
     border-radius: 12px;
   }
@@ -1362,4 +1444,3 @@ body.modal-open {
     padding-right: 2.25rem;
   }
 }
-

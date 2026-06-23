@@ -23,6 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastFocusedElement = null;
   let galleryTicking = false;
+  let galleryEdgeVelocity = 0;
+  let galleryTargetVelocity = 0;
+  let galleryEdgeFrame = null;
+  let galleryLastFrameTime = 0;
+  let galleryTouchStartX = 0;
+  let galleryTouchStartY = 0;
+  let galleryTouchStartScroll = 0;
+  let galleryTouchDragging = false;
   let transitionTicking = false;
 
   function getFocusableElements() {
@@ -102,6 +110,147 @@ document.addEventListener("DOMContentLoaded", () => {
       window.requestAnimationFrame(updateActiveGalleryItem);
       galleryTicking = true;
     }
+  }
+
+  function isRotatedGallery() {
+    if (!galleryScroller) return false;
+
+    return window.getComputedStyle(galleryScroller).transform !== "none";
+  }
+
+  function getGalleryScrollPosition() {
+    return isRotatedGallery() ? galleryScroller.scrollTop : galleryScroller.scrollLeft;
+  }
+
+  function setGalleryScrollPosition(value) {
+    if (isRotatedGallery()) {
+      galleryScroller.scrollTop = value;
+    } else {
+      galleryScroller.scrollLeft = value;
+    }
+  }
+
+  function stopGalleryEdgeScroll(immediate = false) {
+    galleryTargetVelocity = 0;
+
+    if (immediate) {
+      galleryEdgeVelocity = 0;
+      galleryLastFrameTime = 0;
+    }
+
+    if (immediate && galleryEdgeFrame) {
+      window.cancelAnimationFrame(galleryEdgeFrame);
+      galleryEdgeFrame = null;
+    }
+  }
+
+  function updateGalleryEdgeScroll(timestamp) {
+    if (!galleryScroller) {
+      stopGalleryEdgeScroll(true);
+      return;
+    }
+
+    const elapsed = galleryLastFrameTime ? Math.min(timestamp - galleryLastFrameTime, 32) : 16;
+    const easing = reducedMotionQuery.matches ? 0.5 : 0.14;
+
+    galleryEdgeVelocity += (galleryTargetVelocity - galleryEdgeVelocity) * easing;
+
+    if (Math.abs(galleryEdgeVelocity) < 0.01 && Math.abs(galleryTargetVelocity) < 0.01) {
+      stopGalleryEdgeScroll(true);
+      return;
+    }
+
+    const nextPosition = getGalleryScrollPosition() + galleryEdgeVelocity * elapsed;
+
+    setGalleryScrollPosition(nextPosition);
+    requestGalleryUpdate();
+    galleryLastFrameTime = timestamp;
+    galleryEdgeFrame = window.requestAnimationFrame(updateGalleryEdgeScroll);
+  }
+
+  function setGalleryEdgeScroll(edgeVelocity) {
+    if (!galleryScroller) return;
+
+    galleryTargetVelocity = edgeVelocity;
+
+    if (!galleryEdgeFrame) {
+      galleryLastFrameTime = 0;
+      galleryEdgeFrame = window.requestAnimationFrame(updateGalleryEdgeScroll);
+    }
+  }
+
+  function handleGalleryPointerMove(event) {
+    if (!galleryScroller || !hoverQuery.matches || event.pointerType === "touch") return;
+
+    const gallery = galleryScroller.closest(".archive-gallery");
+    const rect = gallery?.getBoundingClientRect();
+    if (!rect) return;
+
+    const edgeSize = Math.min(180, rect.width * 0.22);
+    const maxSpeed = reducedMotionQuery.matches ? 0.52 : 1.08;
+    const leftDistance = event.clientX - rect.left;
+    const rightDistance = rect.right - event.clientX;
+
+    if (leftDistance >= 0 && leftDistance < edgeSize) {
+      const edgeIntensity = 1 - leftDistance / edgeSize;
+      setGalleryEdgeScroll(-maxSpeed * edgeIntensity * edgeIntensity);
+      return;
+    }
+
+    if (rightDistance >= 0 && rightDistance < edgeSize) {
+      const edgeIntensity = 1 - rightDistance / edgeSize;
+      setGalleryEdgeScroll(maxSpeed * edgeIntensity * edgeIntensity);
+      return;
+    }
+
+    stopGalleryEdgeScroll();
+  }
+
+  function handleGalleryWheel(event) {
+    if (!galleryScroller || !hoverQuery.matches || !isRotatedGallery()) return;
+
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey) {
+      event.preventDefault();
+      setGalleryScrollPosition(getGalleryScrollPosition() + event.deltaX + event.deltaY);
+      requestGalleryUpdate();
+      return;
+    }
+
+    event.preventDefault();
+    window.scrollBy({ top: event.deltaY, left: 0, behavior: "auto" });
+  }
+
+  function handleGalleryTouchStart(event) {
+    if (!galleryScroller || event.touches.length !== 1 || isRotatedGallery()) return;
+
+    const touch = event.touches[0];
+    galleryTouchStartX = touch.clientX;
+    galleryTouchStartY = touch.clientY;
+    galleryTouchStartScroll = galleryScroller.scrollLeft;
+    galleryTouchDragging = false;
+    stopGalleryEdgeScroll(true);
+  }
+
+  function handleGalleryTouchMove(event) {
+    if (!galleryScroller || event.touches.length !== 1 || isRotatedGallery()) return;
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - galleryTouchStartX;
+    const deltaY = touch.clientY - galleryTouchStartY;
+
+    if (!galleryTouchDragging && Math.abs(deltaX) > 8 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15) {
+      galleryTouchDragging = true;
+    }
+
+    if (!galleryTouchDragging) return;
+
+    event.preventDefault();
+    galleryScroller.scrollLeft = galleryTouchStartScroll - deltaX;
+    requestGalleryUpdate();
+  }
+
+  function handleGalleryTouchEnd() {
+    galleryTouchDragging = false;
   }
 
   function clamp(value, min, max) {
@@ -263,11 +412,21 @@ document.addEventListener("DOMContentLoaded", () => {
   mailFallbackForms.forEach(initMailFallback);
 
   galleryScroller?.addEventListener("scroll", requestGalleryUpdate, { passive: true });
+  galleryScroller?.closest(".archive-gallery")?.addEventListener("pointermove", handleGalleryPointerMove);
+  galleryScroller?.closest(".archive-gallery")?.addEventListener("pointerleave", stopGalleryEdgeScroll);
+  galleryScroller?.addEventListener("wheel", handleGalleryWheel, { passive: false });
+  galleryScroller?.addEventListener("touchstart", handleGalleryTouchStart, { passive: true });
+  galleryScroller?.addEventListener("touchmove", handleGalleryTouchMove, { passive: false });
+  galleryScroller?.addEventListener("touchend", handleGalleryTouchEnd, { passive: true });
+  galleryScroller?.addEventListener("touchcancel", handleGalleryTouchEnd, { passive: true });
   window.addEventListener("scroll", requestTransitionUpdate, { passive: true });
   window.addEventListener("resize", () => {
+    stopGalleryEdgeScroll(true);
     requestGalleryUpdate();
     requestTransitionUpdate();
   });
+
+  reducedMotionQuery.addEventListener("change", () => stopGalleryEdgeScroll(true));
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && modal && !modal.hidden) {
