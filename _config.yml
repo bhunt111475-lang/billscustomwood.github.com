@@ -1,0 +1,5 @@
+exclude:
+  - backup/
+  - drafts/
+  - verification/
+  - .vscode/
