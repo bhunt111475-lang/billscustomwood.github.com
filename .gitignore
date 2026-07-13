@@ -2,3 +2,23 @@ backup/
 drafts/
 verification/
 .vscode/
+/woodwork-manager/
+__pycache__/
+.pytest_cache/
+/.agents/
+/.codex/
+
+# OS/editor clutter
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+
+# Local secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.pfx
+*.p12

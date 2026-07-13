@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-12T17:06:03.305743+00:00",
+  "items": [
+    {
+      "id": "179b3e9d-7111-51fa-938c-ed946246a8b5",
+      "title": "Woodwork 20210328 200543",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 0,
+      "mainImage": "assets/assets_woodwork/20210328_200543.jpg",
+      "images": [
+        "assets/assets_woodwork/20210328_200543.jpg"
+      ],
+      "altText": "Woodwork archive piece 20210328"
+    },
+    {
+      "id": "c3c5ff66-8b13-5ed9-bca5-1b0b4ba38515",
+      "title": "Woodwork 20210404 111858",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 1,
+      "mainImage": "assets/assets_woodwork/20210404_111858.jpg",
+      "images": [
+        "assets/assets_woodwork/20210404_111858.jpg"
+      ],
+      "altText": "Woodwork archive piece 20210404"
+    },
+    {
+      "id": "15f9a38c-bf03-5ea2-bbdd-67b5f43f141a",
+      "title": "Woodwork 20230920 210137",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 2,
+      "mainImage": "assets/assets_woodwork/20230920_210137.jpg",
+      "images": [
+        "assets/assets_woodwork/20230920_210137.jpg"
+      ],
+      "altText": "Woodwork archive piece 20230920"
+    },
+    {
+      "id": "7337741f-0067-5d0c-ac0a-f92b045e5c5f",
+      "title": "Woodwork 20231013 191242",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 3,
+      "mainImage": "assets/assets_woodwork/20231013_191242.jpg",
+      "images": [
+        "assets/assets_woodwork/20231013_191242.jpg"
+      ],
+      "altText": "Woodwork archive piece 20231013"
+    },
+    {
+      "id": "07c02098-0df4-5f0b-97d9-8af9e8e8e1df",
+      "title": "Woodwork 20231221 183738",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 4,
+      "mainImage": "assets/assets_woodwork/20231221_183738.jpg",
+      "images": [
+        "assets/assets_woodwork/20231221_183738.jpg"
+      ],
+      "altText": "Woodwork archive piece 20231221"
+    },
+    {
+      "id": "23e09c4f-15a6-589e-ad55-c10e699a7b2d",
+      "title": "Woodwork 20240129 063517",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 5,
+      "mainImage": "assets/assets_woodwork/20240129_063517.jpg",
+      "images": [
+        "assets/assets_woodwork/20240129_063517.jpg"
+      ],
+      "altText": "Woodwork archive piece 20240129"
+    },
+    {
+      "id": "898d1f7d-0ca0-5259-8296-bdae491682fc",
+      "title": "Woodwork 20240205 064834",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 6,
+      "mainImage": "assets/assets_woodwork/20240205_064834.jpg",
+      "images": [
+        "assets/assets_woodwork/20240205_064834.jpg"
+      ],
+      "altText": "Woodwork archive piece 20240205"
+    },
+    {
+      "id": "bdd48f84-6d39-51ed-9459-a5c810794b18",
+      "title": "Woodwork 20240208 155830",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 7,
+      "mainImage": "assets/assets_woodwork/20240208_155830.jpg",
+      "images": [
+        "assets/assets_woodwork/20240208_155830.jpg"
+      ],
+      "altText": "Woodwork archive piece 20240208"
+    },
+    {
+      "id": "3dc8e8e8-9ff7-5ed5-ae39-8dde0d70bb1e",
+      "title": "Woodwork 20240217 075850",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 8,
+      "mainImage": "assets/assets_woodwork/20240217_075850.jpg",
+      "images": [
+        "assets/assets_woodwork/20240217_075850.jpg"
+      ],
+      "altText": "Woodwork archive piece 20240217"
+    },
+    {
+      "id": "ddf97e54-3912-5c36-902b-8f853ac8b3cb",
+      "title": "Woodwork 20241104 230159",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 9,
+      "mainImage": "assets/assets_woodwork/20241104_230159.jpg",
+      "images": [
+        "assets/assets_woodwork/20241104_230159.jpg"
+      ],
+      "altText": "Woodwork archive piece 20241104"
+    },
+    {
+      "id": "09cf9ab5-e7c8-5816-b335-13e57ca8e8c3",
+      "title": "Woodwork 20241201 211259",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 10,
+      "mainImage": "assets/assets_woodwork/20241201_211259.jpg",
+      "images": [
+        "assets/assets_woodwork/20241201_211259.jpg"
+      ],
+      "altText": "Woodwork archive piece 20241201"
+    },
+    {
+      "id": "472fdbd6-087b-5095-b0ab-745b5f425ce0",
+      "title": "Woodwork 20250202 094714",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 11,
+      "mainImage": "assets/assets_woodwork/20250202_094714.jpg",
+      "images": [
+        "assets/assets_woodwork/20250202_094714.jpg"
+      ],
+      "altText": "Woodwork archive piece 20250202"
+    },
+    {
+      "id": "bc2130fc-d9d8-52ce-ad3a-c43bcc389d94",
+      "title": "Woodwork 20250219 202033",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 12,
+      "mainImage": "assets/assets_woodwork/20250219_202033.jpg",
+      "images": [
+        "assets/assets_woodwork/20250219_202033.jpg"
+      ],
+      "altText": "Woodwork archive piece 20250219"
+    },
+    {
+      "id": "40a7e6ab-66c8-5bac-8c83-64fd547dceaf",
+      "title": "Woodwork 20250605 200500",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 13,
+      "mainImage": "assets/assets_woodwork/20250605_200500.jpg",
+      "images": [
+        "assets/assets_woodwork/20250605_200500.jpg"
+      ],
+      "altText": "Woodwork archive piece 20250605"
+    },
+    {
+      "id": "ca63cb38-3335-5a29-af91-5496f4416c88",
+      "title": "Woodwork 20250706 161113",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 14,
+      "mainImage": "assets/assets_woodwork/20250706_161113.jpg",
+      "images": [
+        "assets/assets_woodwork/20250706_161113.jpg"
+      ],
+      "altText": "Woodwork archive piece 20250706"
+    },
+    {
+      "id": "bfe61a1d-c997-5c94-947b-6c88f68a60e2",
+      "title": "Woodwork 20250708 220751",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 15,
+      "mainImage": "assets/assets_woodwork/20250708_220751.jpg",
+      "images": [
+        "assets/assets_woodwork/20250708_220751.jpg"
+      ],
+      "altText": "Woodwork archive piece 20250708"
+    },
+    {
+      "id": "d098f6ac-a3cf-5775-9fff-f03a6f1831b4",
+      "title": "Woodwork 20251026 225922",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 16,
+      "mainImage": "assets/assets_woodwork/20251026_225922.jpg",
+      "images": [
+        "assets/assets_woodwork/20251026_225922.jpg"
+      ],
+      "altText": "Woodwork archive piece 20251026"
+    },
+    {
+      "id": "b3f51e46-87b2-5393-a069-f75702c9796b",
+      "title": "Woodwork 20251109 201442",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 17,
+      "mainImage": "assets/assets_woodwork/20251109_201442.jpg",
+      "images": [
+        "assets/assets_woodwork/20251109_201442.jpg"
+      ],
+      "altText": "Woodwork archive piece 20251109"
+    },
+    {
+      "id": "b1cb10c2-7f6d-529c-9271-905004a74bd4",
+      "title": "Woodwork 20251111 231734",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 18,
+      "mainImage": "assets/assets_woodwork/20251111_231734.jpg",
+      "images": [
+        "assets/assets_woodwork/20251111_231734.jpg"
+      ],
+      "altText": "Woodwork archive piece 20251111"
+    },
+    {
+      "id": "561b31fd-74b0-51bd-860a-7292e8a7278f",
+      "title": "Woodwork 20251201 203553",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 19,
+      "mainImage": "assets/assets_woodwork/20251201_203553.jpg",
+      "images": [
+        "assets/assets_woodwork/20251201_203553.jpg"
+      ],
+      "altText": "Woodwork archive piece 20251201"
+    },
+    {
+      "id": "06585399-e927-5067-b665-5e7610d4e575",
+      "title": "Woodwork 20260216 220317",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 20,
+      "mainImage": "assets/assets_woodwork/20260216_220317.jpg",
+      "images": [
+        "assets/assets_woodwork/20260216_220317.jpg"
+      ],
+      "altText": "Woodwork archive piece 20260216"
+    },
+    {
+      "id": "efd97425-df77-595b-b6d2-d4e3aaaee03c",
+      "title": "Woodwork 20260518 081144",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 21,
+      "mainImage": "assets/assets_woodwork/20260518_081144.jpg",
+      "images": [
+        "assets/assets_woodwork/20260518_081144.jpg"
+      ],
+      "altText": "Woodwork archive piece 20260518"
+    },
+    {
+      "id": "d7a982ad-4409-5143-80ef-42a29a330e1d",
+      "title": "Woodwork 2293656451478496053",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 22,
+      "mainImage": "assets/assets_woodwork/2293656451478496053.jpg",
+      "images": [
+        "assets/assets_woodwork/2293656451478496053.jpg"
+      ],
+      "altText": "Woodwork archive piece"
+    },
+    {
+      "id": "573afa74-db62-509b-b13f-d784f22a0302",
+      "title": "Woodwork Clipped image 20240907 130849",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 23,
+      "mainImage": "assets/assets_woodwork/Clipped_image_20240907_130849.png",
+      "images": [
+        "assets/assets_woodwork/Clipped_image_20240907_130849.png"
+      ],
+      "altText": "Woodwork archive clipped piece"
+    },
+    {
+      "id": "2a3e82d1-2f5f-53d7-8226-a474d7bb4cab",
+      "title": "Woodwork e0d218bb 0409 42a9 a8f1 14e2ca9f2916",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 24,
+      "mainImage": "assets/assets_woodwork/e0d218bb-0409-42a9-a8f1-14e2ca9f2916.jpg",
+      "images": [
+        "assets/assets_woodwork/e0d218bb-0409-42a9-a8f1-14e2ca9f2916.jpg"
+      ],
+      "altText": "Woodwork archive piece"
+    },
+    {
+      "id": "1d830652-e3a9-5d2a-9ba3-0a51e93b80b6",
+      "title": "Harley Plaque",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 25,
+      "mainImage": "assets/assets_woodwork/Harley Plaque.jpg",
+      "images": [
+        "assets/assets_woodwork/Harley Plaque.jpg"
+      ],
+      "altText": "Harley plaque woodwork"
+    },
+    {
+      "id": "30418682-b38b-5cbf-aadc-8e3fe64ecd63",
+      "title": "Woodwork Notes 251107 191302 0b7",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 26,
+      "mainImage": "assets/assets_woodwork/Notes_251107_191302_0b7.png",
+      "images": [
+        "assets/assets_woodwork/Notes_251107_191302_0b7.png"
+      ],
+      "altText": "Woodwork archive notes piece"
+    }
+  ]
+}

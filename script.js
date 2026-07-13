@@ -1,4 +1,120 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const motionClasses = ["slower", "faster", "slower1", "faster1", "slower2", "vertical", "slower-down", "fastest"];
+
+  function textElement(tag, className, text) {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    element.textContent = text;
+    return element;
+  }
+
+  function visibleItems(data) {
+    return (Array.isArray(data?.items) ? data.items : [])
+      .filter((item) => item && item.visible !== false && item.status !== "hidden")
+      .sort((a, b) => Number(a.sortOrder || 0) - Number(b.sortOrder || 0));
+  }
+
+  function createInventoryCarousel(item) {
+    const media = document.createElement("div");
+    media.className = "inventory-carousel";
+    media.setAttribute("aria-label", `${item.title || "Inventory item"} photos`);
+    const sources = Array.from(new Set([item.mainImage, ...(Array.isArray(item.images) ? item.images : [])].filter(Boolean)));
+    const image = document.createElement("img");
+    image.src = sources[0] || "";
+    image.alt = item.altText || `${item.title} handcrafted woodwork`;
+    image.loading = "lazy";
+    image.width = 800;
+    image.height = 600;
+    media.append(image);
+    if (sources.length < 2) return media;
+
+    let activeIndex = 0;
+    let touchStartX = 0;
+    const previous = document.createElement("button");
+    const next = document.createElement("button");
+    previous.type = next.type = "button";
+    previous.className = "inventory-carousel__button inventory-carousel__button--previous";
+    next.className = "inventory-carousel__button inventory-carousel__button--next";
+    previous.setAttribute("aria-label", `Previous photo of ${item.title}`);
+    next.setAttribute("aria-label", `Next photo of ${item.title}`);
+    previous.textContent = "‹";
+    next.textContent = "›";
+    const dots = document.createElement("div");
+    dots.className = "inventory-carousel__dots";
+    const dotButtons = sources.map((source, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Show photo ${index + 1} of ${sources.length}`);
+      dot.addEventListener("click", () => show(index));
+      dots.append(dot);
+      return dot;
+    });
+    function show(index) {
+      activeIndex = (index + sources.length) % sources.length;
+      image.src = sources[activeIndex];
+      image.alt = `${item.altText || item.title + " handcrafted woodwork"} — photo ${activeIndex + 1} of ${sources.length}`;
+      dotButtons.forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === activeIndex);
+        dot.setAttribute("aria-current", dotIndex === activeIndex ? "true" : "false");
+      });
+    }
+    previous.addEventListener("click", () => show(activeIndex - 1));
+    next.addEventListener("click", () => show(activeIndex + 1));
+    media.addEventListener("touchstart", (event) => { touchStartX = event.changedTouches[0]?.clientX || 0; }, { passive: true });
+    media.addEventListener("touchend", (event) => {
+      const distance = (event.changedTouches[0]?.clientX || 0) - touchStartX;
+      if (Math.abs(distance) > 45) show(activeIndex + (distance < 0 ? 1 : -1));
+    }, { passive: true });
+    media.append(previous, next, dots);
+    show(0);
+    return media;
+  }
+
+  async function loadCatalogs() {
+    const inventoryList = document.querySelector("[data-inventory-list]");
+    const archiveList = document.querySelector("[data-archive-list]");
+    try {
+      const [inventoryResponse, archiveResponse] = await Promise.all([
+        fetch("data/inventory.json", { cache: "no-cache" }),
+        fetch("data/archive.json", { cache: "no-cache" })
+      ]);
+      if (!inventoryResponse.ok || !archiveResponse.ok) throw new Error("Catalog unavailable");
+      const [inventory, archive] = await Promise.all([inventoryResponse.json(), archiveResponse.json()]);
+      const inventoryItems = visibleItems(inventory);
+      const archiveItems = visibleItems(archive);
+      inventoryList.replaceChildren();
+      if (!inventoryItems.length) {
+        inventoryList.append(textElement("p", "catalog-empty", "No ready-made pieces are available right now. Ask Bill about a custom project."));
+      }
+      inventoryItems.forEach((item) => {
+        const card = document.createElement("article"); card.className = `inventory-card inventory-card--${item.status || "available"}`;
+        card.append(createInventoryCarousel(item));
+        const body = document.createElement("div"); body.className = "inventory-card__body";
+        body.append(textElement("p", "inventory-card__status", item.status === "sold" ? "Sold" : "Available"));
+        body.append(textElement("h3", "", item.title || "Handcrafted piece"));
+        if (item.priceDisplay) body.append(textElement("p", "inventory-card__price", item.priceDisplay));
+        if (item.description) body.append(textElement("p", "", item.description));
+        const details = [item.dimensions, item.material, item.category].filter(Boolean).join(" • ");
+        if (details) body.append(textElement("p", "inventory-card__details", details));
+        if (item.status !== "sold") { const inquiry = document.createElement("button"); inquiry.type = "button"; inquiry.className = "quote-button quote-button--dark"; inquiry.dataset.modalOpen = ""; inquiry.dataset.inquiryTitle = item.title || "Available woodwork"; inquiry.textContent = "Ask About This Piece"; body.append(inquiry); }
+        card.append(body); inventoryList.append(card);
+      });
+      archiveList.replaceChildren();
+      archiveItems.forEach((item, index) => {
+        const wrapper = document.createElement("div"); wrapper.className = `img-wrapper ${motionClasses[index % motionClasses.length]}${index === archiveItems.length - 1 ? " last" : ""}`;
+        const link = document.createElement("a"); link.href = item.mainImage;
+        const image = document.createElement("img"); image.src = item.mainImage; image.alt = item.altText || `${item.title} handcrafted woodwork`; image.loading = "lazy"; image.width = 800; image.height = 600;
+        link.append(image); wrapper.append(link); archiveList.append(wrapper);
+      });
+      if (!archiveItems.length) archiveList.append(textElement("p", "catalog-empty", "The woodwork archive is being updated."));
+    } catch (error) {
+      console.warn("Catalogs could not be loaded.");
+      inventoryList?.replaceChildren(textElement("p", "catalog-empty", "Current inventory could not be loaded. Please refresh or call Bill."));
+      archiveList?.replaceChildren(textElement("p", "catalog-empty", "The archive could not be loaded. Please refresh and try again."));
+    }
+  }
+
+  await loadCatalogs();
   const modal = document.querySelector("[data-modal]");
   const dialog = modal?.querySelector(".quote-modal__dialog");
   const openButtons = Array.from(document.querySelectorAll("[data-modal-open]"));
@@ -443,7 +559,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   openButtons.forEach((button) => {
-    button.addEventListener("click", openModal);
+    button.addEventListener("click", () => {
+      const inquiryTitle = button.dataset.inquiryTitle;
+      const projectType = document.querySelector("#quote-project-type");
+      if (inquiryTitle && projectType) projectType.value = inquiryTitle;
+      openModal();
+    });
   });
 
   closeButtons.forEach((button) => {
