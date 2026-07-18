@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-18T21:39:41.412126+00:00",
+  "updatedAt": "2026-07-18T22:00:49.722480+00:00",
   "items": [
     {
       "id": "8468c535-a3b4-4dde-ba15-729e17df3d7b",
@@ -42,6 +42,268 @@
         "assets/assets_woodwork/inventory/plant-stand-3-58f7ddd044-42211151.webp"
       ],
       "altText": "Hextaganol Spin Box handcrafted woodwork"
+    },
+    {
+      "id": "17bdd67f-2fad-4e4d-b616-18ca6d41f7a8",
+      "title": "Band Saw 1",
+      "description": "Band Saw box Small",
+      "price": 10.0,
+      "priceDisplay": "$10.00",
+      "dimensions": "See Pic",
+      "material": "Poplar",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 2,
+      "mainImage": "assets/assets_woodwork/inventory/band-saw-box-10-6ea06a2388-7ff135b7.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/band-saw-box-10-6ea06a2388-7ff135b7.webp"
+      ],
+      "altText": "Band Saw 1 handcrafted woodwork"
+    },
+    {
+      "id": "da3c1882-f5c7-4ffe-8d68-6af69c46a023",
+      "title": "BAnd Saw Box 2",
+      "description": "Band Saw Box",
+      "price": 25.0,
+      "priceDisplay": "$25.00",
+      "dimensions": "See Pic",
+      "material": "Poplar",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 3,
+      "mainImage": "assets/assets_woodwork/inventory/band-saw-box25-14460071c9-2cc42edb.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/band-saw-box25-14460071c9-2cc42edb.webp"
+      ],
+      "altText": "BAnd Saw Box 2 handcrafted woodwork"
+    },
+    {
+      "id": "11081098-0326-49e2-b530-0d929575b305",
+      "title": "Carved Faces",
+      "description": "Carved Faces Price is per piece",
+      "price": 10.0,
+      "priceDisplay": "$10.00",
+      "dimensions": "",
+      "material": "Poplar",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 4,
+      "mainImage": "assets/assets_woodwork/inventory/carved-faces-10-90cb25df29-d74baff0.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/carved-faces-10-90cb25df29-d74baff0.webp"
+      ],
+      "altText": "Carved Faces handcrafted woodwork"
+    },
+    {
+      "id": "1745e377-c2af-402f-b5ab-7eab386a9c98",
+      "title": "Carved Faces",
+      "description": "Carved Faces, price is per piece",
+      "price": 25.0,
+      "priceDisplay": "$25.00",
+      "dimensions": "",
+      "material": "Poplar, Unknown",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 5,
+      "mainImage": "assets/assets_woodwork/inventory/carved-faces-20-608f0e6e0d-f9b7e2c6.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/carved-faces-20-608f0e6e0d-f9b7e2c6.webp"
+      ],
+      "altText": "Carved Faces handcrafted woodwork"
+    },
+    {
+      "id": "bbb41a21-94f0-4ce1-b1e3-2974766a959b",
+      "title": "Spiral Christmas",
+      "description": "Moveable Individual parts, can be put into a spiral or any other shape you desire",
+      "price": 10.0,
+      "priceDisplay": "$10.00",
+      "dimensions": "",
+      "material": "Walnut",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 6,
+      "mainImage": "assets/assets_woodwork/inventory/christmas-tree-sprial-10-d15d6135e8-afb8e75c.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/christmas-tree-sprial-10-d15d6135e8-afb8e75c.webp"
+      ],
+      "altText": "Spiral Christmas handcrafted woodwork"
+    },
+    {
+      "id": "623117b3-4439-437c-a6c1-375e661be1a8",
+      "title": "Cutting Board",
+      "description": "Cutting board",
+      "price": 35.0,
+      "priceDisplay": "$35.00",
+      "dimensions": "",
+      "material": "Walnut and Cherry",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 7,
+      "mainImage": "assets/assets_woodwork/inventory/cutting-board-1c46ff87e5-73f379c5.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/cutting-board-1c46ff87e5-73f379c5.webp"
+      ],
+      "altText": "Cutting Board handcrafted woodwork"
+    },
+    {
+      "id": "ef67a8e1-4282-4b06-9330-483f320129a6",
+      "title": "Blue Eyed Eagle",
+      "description": "Built with multiple types of wood and blue eye added with epoxy",
+      "price": 45.0,
+      "priceDisplay": "$45.00",
+      "dimensions": "",
+      "material": "Various",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 8,
+      "mainImage": "assets/assets_woodwork/inventory/eagle-blue-eyes-f2ba45dcae-d45283d5.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/eagle-blue-eyes-f2ba45dcae-d45283d5.webp"
+      ],
+      "altText": "Blue Eyed Eagle handcrafted woodwork"
+    },
+    {
+      "id": "470110c1-0523-4e40-b987-070ca38952fc",
+      "title": "Brown eye Eagle",
+      "description": "Eagle made from various woods.",
+      "price": 40.0,
+      "priceDisplay": "$40.00",
+      "dimensions": "",
+      "material": "Various",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 9,
+      "mainImage": "assets/assets_woodwork/inventory/eagle-brown-eyes-4ec5100b44-cb1a08bf.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/eagle-brown-eyes-4ec5100b44-cb1a08bf.webp"
+      ],
+      "altText": "Brown eye Eagle handcrafted woodwork"
+    },
+    {
+      "id": "a46c6f62-0c98-41cb-aaa3-5fede8fd7063",
+      "title": "Epoxy Skulls",
+      "description": "Skulls with different colored epoxies. Price per piece",
+      "price": 10.0,
+      "priceDisplay": "$10.00",
+      "dimensions": "",
+      "material": "Epoxy",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 10,
+      "mainImage": "assets/assets_woodwork/inventory/epoxy-skulls-10-fc498f484c-ce432920.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/epoxy-skulls-10-fc498f484c-ce432920.webp"
+      ],
+      "altText": "Epoxy Skulls handcrafted woodwork"
+    },
+    {
+      "id": "02ce79d2-0484-4339-b26e-c8216dbc4e5a",
+      "title": "Pot leaf Chair With personalized name plate",
+      "description": "Adirondak chair with a potleaf carved into the back. Personalize with the name of the stoned throned.",
+      "price": 125.0,
+      "priceDisplay": "$125.00",
+      "dimensions": "",
+      "material": "Poplar",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 11,
+      "mainImage": "assets/assets_woodwork/inventory/pot-leadf-chair-7eb6d96e0f-ff009ec5.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/pot-leadf-chair-7eb6d96e0f-ff009ec5.webp"
+      ],
+      "altText": "Pot leaf Chair With personalized name plate handcrafted woodwork"
+    },
+    {
+      "id": "553e635b-68a0-4910-9a5f-098975239c66",
+      "title": "Totem Poles",
+      "description": "Hand Carved Totem poles Large is 100- Medium is 75- And small is 30",
+      "price": 100.0,
+      "priceDisplay": "$100.00",
+      "dimensions": "",
+      "material": "Poplar",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 12,
+      "mainImage": "assets/assets_woodwork/inventory/totem-poles-100-75-30-6324202a93-6cd30d11.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/totem-75-4bde4233df-66a5104f.webp",
+        "assets/assets_woodwork/inventory/totem-poles-100-75-30-6324202a93-6cd30d11.webp",
+        "assets/assets_woodwork/inventory/totems-100-30-7ed82200e5-dcd3cbb0.webp"
+      ],
+      "altText": "Totem Poles handcrafted woodwork"
+    },
+    {
+      "id": "6106cb7c-2c10-4ade-acd2-bb85da81cc2b",
+      "title": "Single Cross on a hill",
+      "description": "Band Saw carved Cross on a hill",
+      "price": 10.0,
+      "priceDisplay": "$10.00",
+      "dimensions": "",
+      "material": "Poplar",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 13,
+      "mainImage": "assets/assets_woodwork/inventory/single-cross-on-a-hill-10-dcfbad745e-118585f7.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/single-cross-on-a-hill-10-dcfbad745e-118585f7.webp"
+      ],
+      "altText": "Single Cross on a hill handcrafted woodwork"
+    },
+    {
+      "id": "9587d43d-b242-486c-8129-8bd258d77cda",
+      "title": "Triple Cross on hill",
+      "description": "Three crosses on a hill with a magnetic drawer underneath",
+      "price": 15.0,
+      "priceDisplay": "$15.00",
+      "dimensions": "",
+      "material": "Poplar",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 14,
+      "mainImage": "assets/assets_woodwork/inventory/triple-cross-on-hill-with-drawer-15-8c89207971-c5a47020.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/triple-cross-on-hill-with-drawer-15-8c89207971-c5a47020.webp"
+      ],
+      "altText": "Triple Cross on hill handcrafted woodwork"
     }
   ]
 }
