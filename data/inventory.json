@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-18T18:49:30.656160+00:00",
+  "items": [
+    {
+      "id": "8468c535-a3b4-4dde-ba15-729e17df3d7b",
+      "title": "USMC",
+      "description": "",
+      "price": 20.0,
+      "priceDisplay": "$20.00",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 0,
+      "mainImage": "assets/assets_woodwork/inventory/usmc-round-0f5d368c06-02013ccd.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/usmc-round-0f5d368c06-02013ccd.webp"
+      ],
+      "altText": "USMC handcrafted woodwork"
+    }
+  ]
+}
