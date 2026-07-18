@@ -73,48 +73,99 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function loadCatalogs() {
     const inventoryList = document.querySelector("[data-inventory-list]");
     const archiveList = document.querySelector("[data-archive-list]");
+
+    // fetch inventory and archive independently and tolerate one failing so the other can still render
+    let inventory = null;
+    let archive = null;
+
     try {
-      const [inventoryResponse, archiveResponse] = await Promise.all([
-        fetch("data/inventory.json", { cache: "no-cache" }),
-        fetch("data/archive.json", { cache: "no-cache" })
-      ]);
-      if (!inventoryResponse.ok || !archiveResponse.ok) throw new Error("Catalog unavailable");
-      const [inventory, archive] = await Promise.all([inventoryResponse.json(), archiveResponse.json()]);
+      const invResp = await fetch("data/inventory.json", { cache: "no-cache" }).catch(() => null);
+      if (invResp && invResp.ok) {
+        try {
+          inventory = await invResp.json();
+        } catch (e) {
+          console.error("Failed to parse inventory JSON:", e);
+        }
+      } else if (invResp) {
+        console.warn("Inventory fetch failed with status:", invResp.status);
+      }
+    } catch (e) {
+      console.warn("Inventory fetch error:", e);
+    }
+
+    try {
+      const archResp = await fetch("data/archive.json", { cache: "no-cache" }).catch(() => null);
+      if (archResp && archResp.ok) {
+        try {
+          archive = await archResp.json();
+        } catch (e) {
+          console.error("Failed to parse archive JSON:", e);
+        }
+      } else if (archResp) {
+        console.warn("Archive fetch failed with status:", archResp.status);
+      }
+    } catch (e) {
+      console.warn("Archive fetch error:", e);
+    }
+
+    try {
       const inventoryItems = visibleItems(inventory);
       const archiveItems = visibleItems(archive);
-      inventoryList.replaceChildren();
-      if (!inventoryItems.length) {
-        inventoryList.append(textElement("p", "catalog-empty", "No ready-made pieces are available right now. Ask Bill about a custom project."));
+
+      if (inventoryList) {
+        inventoryList.replaceChildren();
+        if (!inventoryItems.length) {
+          inventoryList.append(textElement("p", "catalog-empty", "No ready-made pieces are available right now. Ask Bill about a custom project."));
+        }
+        inventoryItems.forEach((item) => {
+          const card = document.createElement("article"); card.className = `inventory-card inventory-card--${item.status || "available"}`;
+          card.append(createInventoryCarousel(item));
+          const body = document.createElement("div"); body.className = "inventory-card__body";
+          body.append(textElement("p", "inventory-card__status", item.status === "sold" ? "Sold" : "Available"));
+          body.append(textElement("h3", "", item.title || "Handcrafted piece"));
+          if (item.priceDisplay) body.append(textElement("p", "inventory-card__price", item.priceDisplay));
+          if (item.description) body.append(textElement("p", "", item.description));
+          const details = [item.dimensions, item.material, item.category].filter(Boolean).join(" • ");
+          if (details) body.append(textElement("p", "inventory-card__details", details));
+          if (item.status !== "sold") {
+            const inquiry = document.createElement("button");
+            inquiry.type = "button";
+            inquiry.className = "quote-button quote-button--dark";
+            inquiry.dataset.modalOpen = "";
+            inquiry.dataset.inquiryTitle = item.title || "Inventory inquiry";
+            inquiry.textContent = "Ask about this piece";
+            body.append(inquiry);
+          }
+          card.append(body); inventoryList.append(card);
+        });
       }
-      inventoryItems.forEach((item) => {
-        const card = document.createElement("article"); card.className = `inventory-card inventory-card--${item.status || "available"}`;
-        card.append(createInventoryCarousel(item));
-        const body = document.createElement("div"); body.className = "inventory-card__body";
-        body.append(textElement("p", "inventory-card__status", item.status === "sold" ? "Sold" : "Available"));
-        body.append(textElement("h3", "", item.title || "Handcrafted piece"));
-        if (item.priceDisplay) body.append(textElement("p", "inventory-card__price", item.priceDisplay));
-        if (item.description) body.append(textElement("p", "", item.description));
-        const details = [item.dimensions, item.material, item.category].filter(Boolean).join(" • ");
-        if (details) body.append(textElement("p", "inventory-card__details", details));
-        if (item.status !== "sold") { const inquiry = document.createElement("button"); inquiry.type = "button"; inquiry.className = "quote-button quote-button--dark"; inquiry.dataset.modalOpen = ""; inquiry.dataset.inquiryTitle = item.title || "Available woodwork"; inquiry.textContent = "Ask About This Piece"; body.append(inquiry); }
-        card.append(body); inventoryList.append(card);
-      });
-      archiveList.replaceChildren();
-      archiveItems.forEach((item, index) => {
-        const wrapper = document.createElement("div"); wrapper.className = `img-wrapper ${motionClasses[index % motionClasses.length]}${index === archiveItems.length - 1 ? " last" : ""}`;
-        const link = document.createElement("a"); link.href = item.mainImage;
-        const image = document.createElement("img"); image.src = item.mainImage; image.alt = item.altText || `${item.title} handcrafted woodwork`; image.loading = "lazy"; image.width = 800; image.height = 600;
-        link.append(image); wrapper.append(link); archiveList.append(wrapper);
-      });
-      if (!archiveItems.length) archiveList.append(textElement("p", "catalog-empty", "The woodwork archive is being updated."));
+
+      if (archiveList) {
+        archiveList.replaceChildren();
+        archiveItems.forEach((item, index) => {
+          const wrapper = document.createElement("div"); wrapper.className = `img-wrapper ${motionClasses[index % motionClasses.length]}${index === archiveItems.length - 1 ? " last" : ""}`;
+          const link = document.createElement("a"); link.href = item.mainImage;
+          const image = document.createElement("img"); image.src = item.mainImage; image.alt = item.altText || `${item.title} handcrafted woodwork`; image.loading = "lazy"; image.width = 800; image.height = 600;
+          link.append(image); wrapper.append(link); archiveList.append(wrapper);
+        });
+        if (!archiveItems.length && archiveList) archiveList.append(textElement("p", "catalog-empty", "The woodwork archive is being updated."));
+      }
+
+      // If both failed, show appropriate message
+      if ((!inventory || !Array.isArray(inventory?.items) || inventory.items.length === 0) && (!archive || !Array.isArray(archive?.items) || archive.items.length === 0)) {
+        console.warn("Neither inventory nor archive returned items.");
+        inventoryList?.replaceChildren(textElement("p", "catalog-empty", "Current inventory could not be loaded. Please refresh or call Bill."));
+        archiveList?.replaceChildren(textElement("p", "catalog-empty", "The archive could not be loaded. Please refresh and try again."));
+      }
     } catch (error) {
-      console.warn("Catalogs could not be loaded.");
+      console.warn("Catalog rendering failed:", error);
       inventoryList?.replaceChildren(textElement("p", "catalog-empty", "Current inventory could not be loaded. Please refresh or call Bill."));
       archiveList?.replaceChildren(textElement("p", "catalog-empty", "The archive could not be loaded. Please refresh and try again."));
     }
   }
 
   await loadCatalogs();
+
   const modal = document.querySelector("[data-modal]");
   const dialog = modal?.querySelector(".quote-modal__dialog");
   const openButtons = Array.from(document.querySelectorAll("[data-modal-open]"));
