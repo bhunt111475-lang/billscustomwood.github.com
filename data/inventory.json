@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-18T18:49:30.656160+00:00",
+  "updatedAt": "2026-07-18T21:39:41.412126+00:00",
   "items": [
     {
       "id": "8468c535-a3b4-4dde-ba15-729e17df3d7b",
@@ -21,6 +21,27 @@
         "assets/assets_woodwork/inventory/usmc-round-0f5d368c06-02013ccd.webp"
       ],
       "altText": "USMC handcrafted woodwork"
+    },
+    {
+      "id": "1aa8b4af-eedc-4d23-bcf5-a12bfce0ed32",
+      "title": "Hextaganol Spin Box",
+      "description": "Rotate top lid to expose the compartments",
+      "price": 50.0,
+      "priceDisplay": "$50.00",
+      "dimensions": "16\" round",
+      "material": "Walnut",
+      "category": "",
+      "createdDate": "2026-07-18",
+      "status": "available",
+      "featured": true,
+      "visible": true,
+      "sortOrder": 1,
+      "mainImage": "assets/assets_woodwork/inventory/plant-stand-2-0db30b8cd3-c22f3fe3.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/plant-stand-2-0db30b8cd3-c22f3fe3.webp",
+        "assets/assets_woodwork/inventory/plant-stand-3-58f7ddd044-42211151.webp"
+      ],
+      "altText": "Hextaganol Spin Box handcrafted woodwork"
     }
   ]
 }
