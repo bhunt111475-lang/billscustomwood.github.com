@@ -1,27 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-18T22:00:49.722480+00:00",
+  "updatedAt": "2026-07-18T22:02:08.094858+00:00",
   "items": [
-    {
-      "id": "8468c535-a3b4-4dde-ba15-729e17df3d7b",
-      "title": "USMC",
-      "description": "",
-      "price": 20.0,
-      "priceDisplay": "$20.00",
-      "dimensions": "",
-      "material": "",
-      "category": "",
-      "createdDate": "2026-07-18",
-      "status": "available",
-      "featured": false,
-      "visible": true,
-      "sortOrder": 0,
-      "mainImage": "assets/assets_woodwork/inventory/usmc-round-0f5d368c06-02013ccd.webp",
-      "images": [
-        "assets/assets_woodwork/inventory/usmc-round-0f5d368c06-02013ccd.webp"
-      ],
-      "altText": "USMC handcrafted woodwork"
-    },
     {
       "id": "1aa8b4af-eedc-4d23-bcf5-a12bfce0ed32",
       "title": "Hextaganol Spin Box",
@@ -35,7 +15,7 @@
       "status": "available",
       "featured": true,
       "visible": true,
-      "sortOrder": 1,
+      "sortOrder": 0,
       "mainImage": "assets/assets_woodwork/inventory/plant-stand-2-0db30b8cd3-c22f3fe3.webp",
       "images": [
         "assets/assets_woodwork/inventory/plant-stand-2-0db30b8cd3-c22f3fe3.webp",
@@ -56,7 +36,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 2,
+      "sortOrder": 1,
       "mainImage": "assets/assets_woodwork/inventory/band-saw-box-10-6ea06a2388-7ff135b7.webp",
       "images": [
         "assets/assets_woodwork/inventory/band-saw-box-10-6ea06a2388-7ff135b7.webp"
@@ -76,7 +56,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 3,
+      "sortOrder": 2,
       "mainImage": "assets/assets_woodwork/inventory/band-saw-box25-14460071c9-2cc42edb.webp",
       "images": [
         "assets/assets_woodwork/inventory/band-saw-box25-14460071c9-2cc42edb.webp"
@@ -96,7 +76,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 4,
+      "sortOrder": 3,
       "mainImage": "assets/assets_woodwork/inventory/carved-faces-10-90cb25df29-d74baff0.webp",
       "images": [
         "assets/assets_woodwork/inventory/carved-faces-10-90cb25df29-d74baff0.webp"
@@ -116,7 +96,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 5,
+      "sortOrder": 4,
       "mainImage": "assets/assets_woodwork/inventory/carved-faces-20-608f0e6e0d-f9b7e2c6.webp",
       "images": [
         "assets/assets_woodwork/inventory/carved-faces-20-608f0e6e0d-f9b7e2c6.webp"
@@ -136,7 +116,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 6,
+      "sortOrder": 5,
       "mainImage": "assets/assets_woodwork/inventory/christmas-tree-sprial-10-d15d6135e8-afb8e75c.webp",
       "images": [
         "assets/assets_woodwork/inventory/christmas-tree-sprial-10-d15d6135e8-afb8e75c.webp"
@@ -156,7 +136,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 7,
+      "sortOrder": 6,
       "mainImage": "assets/assets_woodwork/inventory/cutting-board-1c46ff87e5-73f379c5.webp",
       "images": [
         "assets/assets_woodwork/inventory/cutting-board-1c46ff87e5-73f379c5.webp"
@@ -176,7 +156,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 8,
+      "sortOrder": 7,
       "mainImage": "assets/assets_woodwork/inventory/eagle-blue-eyes-f2ba45dcae-d45283d5.webp",
       "images": [
         "assets/assets_woodwork/inventory/eagle-blue-eyes-f2ba45dcae-d45283d5.webp"
@@ -196,7 +176,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 9,
+      "sortOrder": 8,
       "mainImage": "assets/assets_woodwork/inventory/eagle-brown-eyes-4ec5100b44-cb1a08bf.webp",
       "images": [
         "assets/assets_woodwork/inventory/eagle-brown-eyes-4ec5100b44-cb1a08bf.webp"
@@ -216,7 +196,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 10,
+      "sortOrder": 9,
       "mainImage": "assets/assets_woodwork/inventory/epoxy-skulls-10-fc498f484c-ce432920.webp",
       "images": [
         "assets/assets_woodwork/inventory/epoxy-skulls-10-fc498f484c-ce432920.webp"
@@ -236,7 +216,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 11,
+      "sortOrder": 10,
       "mainImage": "assets/assets_woodwork/inventory/pot-leadf-chair-7eb6d96e0f-ff009ec5.webp",
       "images": [
         "assets/assets_woodwork/inventory/pot-leadf-chair-7eb6d96e0f-ff009ec5.webp"
@@ -256,7 +236,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 12,
+      "sortOrder": 11,
       "mainImage": "assets/assets_woodwork/inventory/totem-poles-100-75-30-6324202a93-6cd30d11.webp",
       "images": [
         "assets/assets_woodwork/inventory/totem-75-4bde4233df-66a5104f.webp",
@@ -278,7 +258,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 13,
+      "sortOrder": 12,
       "mainImage": "assets/assets_woodwork/inventory/single-cross-on-a-hill-10-dcfbad745e-118585f7.webp",
       "images": [
         "assets/assets_woodwork/inventory/single-cross-on-a-hill-10-dcfbad745e-118585f7.webp"
@@ -298,7 +278,7 @@
       "status": "available",
       "featured": false,
       "visible": true,
-      "sortOrder": 14,
+      "sortOrder": 13,
       "mainImage": "assets/assets_woodwork/inventory/triple-cross-on-hill-with-drawer-15-8c89207971-c5a47020.webp",
       "images": [
         "assets/assets_woodwork/inventory/triple-cross-on-hill-with-drawer-15-8c89207971-c5a47020.webp"
