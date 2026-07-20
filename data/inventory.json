@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-18T22:02:08.094858+00:00",
+  "updatedAt": "2026-07-20T17:18:07.113675+00:00",
   "items": [
     {
       "id": "1aa8b4af-eedc-4d23-bcf5-a12bfce0ed32",
@@ -284,6 +284,29 @@
         "assets/assets_woodwork/inventory/triple-cross-on-hill-with-drawer-15-8c89207971-c5a47020.webp"
       ],
       "altText": "Triple Cross on hill handcrafted woodwork"
+    },
+    {
+      "id": "7bdd1169-2e30-4f14-bfa0-72b86104fec2",
+      "title": "Origami Doors Cabinet",
+      "description": "Cabinet made from walnut with oragami style doors.  Must see",
+      "price": 150.0,
+      "priceDisplay": "$150.00",
+      "dimensions": "2' x 2' x 3\"",
+      "material": "Walnut",
+      "category": "Creative Cabinet",
+      "createdDate": "2026-07-20",
+      "status": "available",
+      "featured": true,
+      "visible": true,
+      "sortOrder": 14,
+      "mainImage": "assets/assets_woodwork/inventory/20260720-120214-a6284f7035-fff878fe.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/20260720-120214-a6284f7035-fff878fe.webp",
+        "assets/assets_woodwork/inventory/20260720-120235-718ec67b16-a61f7330.webp",
+        "assets/assets_woodwork/inventory/20260720-120247-4ebff83116-08886aa5.webp",
+        "assets/assets_woodwork/inventory/20260720-120409-bbb20f7409-7d22d6c5.webp"
+      ],
+      "altText": "Origami Doors Cabinet handcrafted woodwork"
     }
   ]
 }
