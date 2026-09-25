@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T04:26:49.813833+00:00",
+  "updatedAt": "2026-09-25T04:36:02.702273+00:00",
   "items": [
     {
       "id": "1aa8b4af-eedc-4d23-bcf5-a12bfce0ed32",
@@ -93,7 +93,7 @@
       "material": "Poplar, Unknown",
       "category": "",
       "createdDate": "2026-06-18",
-      "status": "sold",
+      "status": "available",
       "featured": false,
       "visible": true,
       "sortOrder": 4,

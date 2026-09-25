@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-25T04:26:49.816032+00:00",
+  "updatedAt": "2026-09-25T04:36:02.703745+00:00",
   "items": [
     {
       "id": "179b3e9d-7111-51fa-938c-ed946246a8b5",
@@ -541,6 +541,37 @@
         "assets/assets_woodwork/Notes_251107_191302_0b7.png"
       ],
       "altText": "Woodwork archive notes piece"
+    },
+    {
+      "id": "34142f69-8bef-4a9c-9149-e8285472b09d",
+      "title": "past projects",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-09-24",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 27,
+      "mainImage": "assets/assets_woodwork/archive/20240517-191748-c00fbbaba4-e8816274.webp",
+      "images": [
+        "assets/assets_woodwork/archive/20240517-191748-c00fbbaba4-e8816274.webp",
+        "assets/assets_woodwork/archive/20240517-191849-7496830255-3e0120ac.webp",
+        "assets/assets_woodwork/archive/20240517-191857-53f3b749e9-6ec0543a.webp",
+        "assets/assets_woodwork/archive/20240517-191909-78a6bf5521-46fdfd94.webp",
+        "assets/assets_woodwork/archive/20240517-191916-5fb061cc5a-062ca110.webp",
+        "assets/assets_woodwork/archive/20240517-191958-0549d85387-ba116028.webp",
+        "assets/assets_woodwork/archive/20240517-192007-0abec83fb1-0fbb9209.webp",
+        "assets/assets_woodwork/archive/20240517-192030-8a2063c79a-d6ad4144.webp",
+        "assets/assets_woodwork/archive/20240517-192212-96c5c1c9ff-e0fc2580.webp",
+        "assets/assets_woodwork/archive/20240517-192225-3842290066-931a3161.webp",
+        "assets/assets_woodwork/archive/20240517-192319-092d8d8547-12a54509.webp",
+        "assets/assets_woodwork/archive/20240517-192349-34124d699e-4e1b5fe7.webp"
+      ],
+      "altText": "past projects handcrafted woodwork"
     }
   ]
 }
