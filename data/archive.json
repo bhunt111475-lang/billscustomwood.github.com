@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-26T14:01:39.086181+00:00",
+  "updatedAt": "2026-09-27T19:23:31.986756+00:00",
   "items": [
     {
       "id": "179b3e9d-7111-51fa-938c-ed946246a8b5",
@@ -572,6 +572,127 @@
         "assets/assets_woodwork/archive/20240517-192349-34124d699e-4e1b5fe7.webp"
       ],
       "altText": "past projects handcrafted woodwork"
+    },
+    {
+      "id": "198b3056-8771-4799-8e70-d60385443650",
+      "title": "Bookshelf and Toy chest for the grandkids",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-09-27",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 28,
+      "mainImage": "assets/assets_woodwork/archive/bookshelf-and-toy-chest-e056d75ce2-e9633062.webp",
+      "images": [
+        "assets/assets_woodwork/archive/bookshelf-and-toy-chest-e056d75ce2-e9633062.webp"
+      ],
+      "altText": "Bookshelf and Toy chest for the grandkids handcrafted woodwork"
+    },
+    {
+      "id": "f5f27779-3760-434c-9975-7f626ad8eb4f",
+      "title": "Triple Cross on hill with drawer",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-09-27",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 29,
+      "mainImage": "assets/assets_woodwork/archive/triple-cross-on-hill-with-drawer-15--148157b46b-fee4cf60.webp",
+      "images": [
+        "assets/assets_woodwork/archive/triple-cross-on-hill-with-drawer-15--148157b46b-fee4cf60.webp"
+      ],
+      "altText": "Triple Cross on hill with drawer handcrafted woodwork"
+    },
+    {
+      "id": "32130f7a-e88b-4e53-926d-6d3c986bc733",
+      "title": "14' x 6' Double Privacy Gates.",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-09-27",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 30,
+      "mainImage": "assets/assets_woodwork/archive/14-x-6-double-gate-ee532c625b-8dd34e85.webp",
+      "images": [
+        "assets/assets_woodwork/archive/14-x-6-double-gate-ee532c625b-8dd34e85.webp"
+      ],
+      "altText": "14' x 6' Double Privacy Gates. handcrafted woodwork"
+    },
+    {
+      "id": "a8269bb6-c1cb-49f6-908b-96a979fa9a9f",
+      "title": "Deck stairs Double GAtes",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-09-27",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 31,
+      "mainImage": "assets/assets_woodwork/archive/deck-stairs-double-gate-1-20cc90f778-7c2973ff.webp",
+      "images": [
+        "assets/assets_woodwork/archive/deck-stairs-double-gate-1-20cc90f778-7c2973ff.webp",
+        "assets/assets_woodwork/archive/deck-stairs-double-gate-3-ffe635381f-f48746b9.webp"
+      ],
+      "altText": "Deck stairs Double GAtes handcrafted woodwork"
+    },
+    {
+      "id": "fcb2028a-5e46-48a9-9071-8f9cb6c83fac",
+      "title": "Refinished End Table",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-09-27",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 32,
+      "mainImage": "assets/assets_woodwork/archive/refinished-table-b62b20eec7-4a43fad2.webp",
+      "images": [
+        "assets/assets_woodwork/archive/refinished-table-b62b20eec7-4a43fad2.webp"
+      ],
+      "altText": "Refinished End Table handcrafted woodwork"
+    },
+    {
+      "id": "f5b02e06-a158-4f64-81d5-0f7e3f99b5d1",
+      "title": "Plant stand for the wife",
+      "description": "",
+      "price": null,
+      "priceDisplay": "",
+      "dimensions": "",
+      "material": "",
+      "category": "",
+      "createdDate": "2026-09-27",
+      "status": "archived",
+      "featured": false,
+      "visible": true,
+      "sortOrder": 33,
+      "mainImage": "assets/assets_woodwork/archive/plant-stand-3-9328703a91-270a6af7.webp",
+      "images": [
+        "assets/assets_woodwork/archive/plant-stand-3-9328703a91-270a6af7.webp"
+      ],
+      "altText": "Plant stand for the wife handcrafted woodwork"
     }
   ]
 }

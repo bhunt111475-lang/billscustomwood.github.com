@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-26T14:01:39.086181+00:00",
+  "updatedAt": "2026-09-27T19:23:31.986756+00:00",
   "items": [
     {
       "id": "1aa8b4af-eedc-4d23-bcf5-a12bfce0ed32",
@@ -347,6 +347,29 @@
         "assets/assets_woodwork/inventory/american-flag-hidden-compartment-1-dd1eac205e-56528d33.webp"
       ],
       "altText": "American Flag Hidden Compartment handcrafted woodwork"
+    },
+    {
+      "id": "900820b5-0339-4bf0-a548-c5f0c1087005",
+      "title": "Walnut , Purple Heart Cigarette case",
+      "description": "Holds a Bic lighter and approx. 8 cigarettes",
+      "price": 25.0,
+      "priceDisplay": "$25.00",
+      "dimensions": "1.25\" x 3.5\" x 4.5\"",
+      "material": "Walnut and Purple Heart",
+      "category": "",
+      "createdDate": "2026-09-27",
+      "status": "available",
+      "featured": true,
+      "visible": true,
+      "sortOrder": 17,
+      "mainImage": "assets/assets_woodwork/inventory/cigarette-case-25-1-ca8c5fa1e7-e7be26d8.webp",
+      "images": [
+        "assets/assets_woodwork/inventory/cigarette-case-25-1-ca8c5fa1e7-e7be26d8.webp",
+        "assets/assets_woodwork/inventory/cigarette-case-25-2-b2e6c55198-1ed44c0a.webp",
+        "assets/assets_woodwork/inventory/cigarette-case-25-3-4214282aa0-57c7538b.webp",
+        "assets/assets_woodwork/inventory/cigarette-case-25-4-c2fdf7eee0-6cb39e19.webp"
+      ],
+      "altText": "Walnut , Purple Heart Cigarette case handcrafted woodwork"
     }
   ]
 }
